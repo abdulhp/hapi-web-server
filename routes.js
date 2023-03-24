@@ -50,6 +50,16 @@ const routes = [
 		}
 	},
 	{
+		method: 'GET',
+		path: '/toolkit',
+		handler: (request, h) => {
+			const response = h.response('success')
+				.type('text/plain');
+			
+			return response.header('X-Custom', 'some-value');
+		}
+	},
+	{
 		method: '*',
 		path: '/{any*}',
 		handler: (request, h) => {
